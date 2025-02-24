@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Task</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Add Task</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Add Task</h1>
-    <input type="text" id="taskInput" placeholder="Enter task">
-    <button onclick="addTask()">Add Task</button>
-    <a href="index.html">Back</a>
-    <script src="script.js"></script>
+  <header>
+    <h1>Add Task Page</h1>
+  </header>
+  <div id="add-task-container">
+    <input type="text" id="newTaskInput" placeholder="Enter new task">
+    <button id="addTaskButton" class="add-task-btn">Add Task</button>
+  </div>
+  <script src="add.js"></script>
 </body>
 </html>

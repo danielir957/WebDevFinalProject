@@ -1,25 +1,177 @@
+/* General styles */
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles (for every page) */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
     text-align: center;
-}
-
-h1 {
-    color: #333;
-}
-
-ul {
+  }
+  
+  /* Home page styles */
+  #home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  #confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  /* Tasks page styles */
+  body.tasks-page {
+    background-color: #808080; /* space gray background */
+  }
+  #tasks-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  #taskList {
     list-style: none;
     padding: 0;
-}
-
-li {
-    background: #f4f4f4;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-button {
-    padding: 5px 10px;
+  }
+  .task-item {
+    background-color: #000; /* space black */
+    color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     cursor: pointer;
-}
+  }
+  .task-item span {
+    margin-right: 10px;
+  }
+  
+  /* Container for action buttons */
+  .btn-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Arrow buttons container (grouped closely) */
+  .arrow-container {
+    display: inline-flex;
+    gap: 5px;
+  }
+  
+  /* Home page Start button style (yellow) */
+  .home-start-btn {
+    background-color: yellow;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* Timer page Start button style (yellow) */
+  .timer-start-btn {
+    background-color: yellow;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* When timer is done, button becomes green */
+  .done-btn {
+    background-color: green !important;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* Repeat button style (green for "Do It Again!") */
+  .repeat-btn {
+    background-color: green !important;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* Delete button style (bright wine red) */
+  .delete-btn {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* Move button styles for arrows */
+  .move-btn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  /* Time display style */
+  .time-display {
+    font-size: 0.9em;
+    color: #fff;
+  }
+  
+  /* Add Task page styles */
+  #add-task-container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  #add-task-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Add Task button style (fun red circular "doom day" button) */
+  .add-task-btn {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    color: #fff;
+    border: 4px solid #8B0000;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 1.4em;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .add-task-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  }
+  
+  /* Task detail (Timer) page styles */
+  #task-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+  }
+  #task-detail-container h2 {
+    margin-bottom: 20px;
+  }
+  #timerDisplay {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
