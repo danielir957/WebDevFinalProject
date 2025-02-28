@@ -19,10 +19,10 @@ body.welcome-page {
 }
 body.add-page,
 body.tasks-page {
-  background-color: #444444;
+  background-color: #444444; /* Add & Tasks pages: dark gray */
 }
 body.timer-page {
-  background-color: #262626;
+  background-color: #262626; /* Timer page: very dark gray */
 }
 
 /* Header styles (for every page) */
@@ -59,7 +59,7 @@ footer.bottom-header {
   z-index: 1000;
 }
 
-/* Updated welcome text styling */
+/* Welcome text styling */
 .welcome-text-extra {
   font-size: 2.25em;
   color: #333;
@@ -98,9 +98,14 @@ footer.bottom-header {
   margin: 10px auto 0 auto;
 }
 
-/* Initially hide welcome-message and buffer via CSS */
-#welcome-message, #buffer {
-  display: none;
+/* Ensure welcome message text (e.g., "Welcome, <name>!") is styled consistently */
+#welcomeText {
+  color: #333;  /* dark gray to match other texts on the page */
+}
+
+/* Rule for "No Tasks Available." message */
+.no-tasks {
+  color: white;
 }
 
 /* Tasks page container */
@@ -123,7 +128,7 @@ footer.bottom-header {
   margin: 10px auto;
   padding: 15px;
   width: 80%;
-  border-radius: 10px; /* curved corners */
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
