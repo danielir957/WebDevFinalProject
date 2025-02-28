@@ -75,7 +75,7 @@ WebDevFinalProject/
    - Under **Source**, select the `gh-pages` branch and set the folder to `/` (root).
    - Save your settings. GitHub Pages will provide a URL (e.g., `https://yourusername.github.io/WebDevFinalProject/`).
 3. **Update API Endpoints:**  
-   Update the API endpoint URLs in your frontend JavaScript files (e.g., `home.js` and `task.js`) to point to your Railway backend URL.
+   Update the API endpoint URLs in your frontend JavaScript files (`add.js`, `home.js`,`task.js` and `index.js`) to point to your Railway backend URL.
 4. **Test the Deployed Site:**  
    Open the GitHub Pages URL in your browser or on your iPhone to verify that the static site loads correctly and interacts with the backend.
 
