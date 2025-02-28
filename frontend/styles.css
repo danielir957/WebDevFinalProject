@@ -254,6 +254,7 @@ footer.bottom-header {
 
 /* Buffer element style for timer page: static, centered */
 #buffer {
+  display: none;  /* Buffer hidden by default */
   width: 100%;
   height: 160px;
   background-image: url('images/buffer.gif');
