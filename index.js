@@ -1,3 +1,5 @@
+const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
+
 document.getElementById("submitName").addEventListener("click", () => {
   const name = document.getElementById("userName").value.trim();
   if (!name) {
@@ -6,18 +8,35 @@ document.getElementById("submitName").addEventListener("click", () => {
   }
   // Save the user name to localStorage for later retrieval on the Home page.
   localStorage.setItem("userName", name);
-  
-  // Hide the input section and show welcome message with confetti
-  document.getElementById("name-input-section").style.display = "none";
-  const welcomeText = document.getElementById("welcomeText");
-  welcomeText.textContent = `Welcome, ${name}!`;
-  document.getElementById("welcome-message").style.display = "block";
-  startConfetti();
-  
-  // Redirect after 3 seconds to home.html (the Home/Tasks page)
-  setTimeout(() => {
-    window.location.href = "home.html";
-  }, 3000);
+
+  // Flush the Redis database via backend before proceeding
+  fetch(`${API_URL}/flush`, { method: "DELETE" })
+    .then(response => response.json())
+    .then(data => {
+      console.log("Tasks flushed", data);
+      // Hide the input section and show welcome message with confetti
+      document.getElementById("name-input-section").style.display = "none";
+      const welcomeText = document.getElementById("welcomeText");
+      welcomeText.textContent = `Welcome, ${name}!`;
+      document.getElementById("welcome-message").style.display = "block";
+      startConfetti();
+      // Redirect after 3 seconds to home.html (the Home/Tasks page)
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 3000);
+    })
+    .catch(error => {
+      console.error("Error flushing tasks:", error);
+      // Proceed anyway if flush fails
+      document.getElementById("name-input-section").style.display = "none";
+      const welcomeText = document.getElementById("welcomeText");
+      welcomeText.textContent = `Welcome, ${name}!`;
+      document.getElementById("welcome-message").style.display = "block";
+      startConfetti();
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 3000);
+    });
 });
 
 function startConfetti() {
