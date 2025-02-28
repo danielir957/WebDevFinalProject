@@ -23,6 +23,7 @@ A full‑stack task management web application built for a Web Development final
 
 ## Project Structure
 
+```
 WebDevFinalProject/
 ├── backend/
 │   ├── app.js
@@ -45,6 +46,7 @@ WebDevFinalProject/
 │       ├── welcome.gif
 │       └── buffer.gif
 └── node_modules/          # (Ignored by Git)
+```
 
 ## Deployment Instructions
 
