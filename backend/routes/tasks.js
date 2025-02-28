@@ -1,16 +1,18 @@
+require('dotenv').config(); // Load environment variables from .env
+
 const express = require("express");
 const router = express.Router();
 const redis = require("redis");
 const { v4: uuidv4 } = require("uuid");
 
-// Create Redis client using cloud credentials or environment variables
+// Create Redis client using only environment variables (no fallback defaults)
 const client = redis.createClient({
   socket: {
-    host: process.env.REDIS_HOST || "redis-12491.c282.east-us-mz.azure.redns.redis-cloud.com",
-    port: process.env.REDIS_PORT || 12491
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT
   },
-  username: process.env.REDIS_USERNAME || "default",
-  password: process.env.REDIS_PASSWORD || "JU9ckfkaBpXUChTuTkc7YRGWsDJM1K7q"
+  username: process.env.REDIS_USERNAME,
+  password: process.env.REDIS_PASSWORD
 });
 
 client.on("error", err => console.error("Redis Client Error", err));
