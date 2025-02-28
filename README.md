@@ -21,7 +21,7 @@ This project is a complete, integrated web application that covers both the clie
 - **Frontend:**
   - **HTML, CSS, JavaScript:** Core technologies for a responsive and interactive UI.
   - **Google Fonts (Pacifico):** For custom typography.
-  - **CSS Transitions & Animations:** For swap animations, confetti effects, and a digital scoreboard timer.
+  - **CSS Transitions & Animations:** For various animations, confetti effects, and a digital timer.
 - **Deployment:**
   - **Railway:** Used to host the backend service (Express and Redis).
   - **GitHub Pages:** Used to deploy the static frontend.
