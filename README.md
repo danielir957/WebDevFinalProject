@@ -1,6 +1,6 @@
 # WebDevFinalProject
 
-A full‑stack task management web application built for a Web Development final project. The project features an Express‑based backend using Redis for persistent storage and a separate static frontend with multiple screens and custom UI animations. The application includes a Welcome page, Home/Tasks page, Add Task page, and Timer page with a digital scoreboard animation and smooth transitions.
+A full‑stack task management web application built for a Web Development final project. The project features an Express‑based backend using Redis for persistent storage and a separate static frontend with multiple screens and custom UI animations. The application includes a Welcome page, Home/Tasks page, Add Task page, and Timer page with smooth transitions.
 
 ## Features
 
@@ -8,10 +8,10 @@ A full‑stack task management web application built for a Web Development final
   - **Backend:** Built with Node.js, Express, and Redis for data storage.
   - **Frontend:** Developed using HTML, CSS, and vanilla JavaScript with custom animations, responsive design, curved UI elements, and circular buttons.
 - **Multiple Screens:**
-  - **Welcome Page:** Greets the user with a personalized welcome message and an animated GIF.
-  - **Home/Tasks Page:** Displays tasks in curved rectangles with smooth swap animations and circular action buttons (Start, Delete, Move).
-  - **Add Task Page:** Allows users to add tasks with an optional description. This page opens in a new tab and, after submission, closes and refreshes the Home page.
-  - **Timer Page:** Shows task details with a digital scoreboard–style timer and a buffer GIF animation. Task content and description are rendered in white for clear visibility.
+  - **Welcome Page:** Greets the user with a personalized welcome message and fun animations.
+  - **Home/Tasks Page:** Displays tasks in curved rectangles with smooth animations and circular action buttons (Start, Delete, Do It Again, Move Up, Move Down).
+  - **Add Task Page:** Allows users to add tasks with an optional description (This page opens in a new tab and, after submission, closes and refreshes the Home page).
+  - **Timer Page:** Shows task details with a timer and a buffer animation (This page opens in a new tab and, after submission, closes and refreshes the Home page).
 - **UI/UX Details:**
   - Custom color scheme featuring space‑gray backgrounds, curved rectangles, circular buttons with hover effects, and the **Pacifico** font from Google Fonts.
 - **Database Management:**
@@ -65,7 +65,7 @@ WebDevFinalProject/
 ### Backend Deployment (Railway)
 
 1. **Push Your Code to GitHub:**  
-   Ensure your project—including the `backend` folder—is pushed to GitHub. Use a proper `.gitignore` to exclude `node_modules`, `.env`, and other sensitive files.
+   Ensure your project—including the `backend` folder—is pushed to GitHub. Use a proper `.gitignore` to exclude `.DS_Store`, `node_modules`, `.env`, and other sensitive files.
 
 2. **Deploy on Railway:**
    - Log in to [Railway](https://railway.app/) and create a new project.
@@ -85,7 +85,6 @@ WebDevFinalProject/
 1. **Create a `gh-pages` Branch:**
    - Create and switch to a new branch called `gh-pages`.
    - Move or copy all files from your `frontend` folder to the root of the `gh-pages` branch.
-   - Rename `welcome.html` to `index.html` and `welcome.js` to `index.js` so that the Welcome page is the entry point.
    - The final structure in the `gh-pages` branch should be:
      ```
      gh-pages branch root/
@@ -115,7 +114,7 @@ WebDevFinalProject/
    - Save your settings. GitHub Pages will provide a URL (e.g., `https://yourusername.github.io/WebDevFinalProject/`).
 
 3. **Update API Endpoints in Frontend:**
-   - In your `home.js` and `task.js` files, update the API endpoint variable (`API_URL`) to point to your Railway backend URL:
+   - In your `add.js`, `home.js`, `task.js` and `index.js` files, update the API endpoint variable (`API_URL`) to point to your Railway backend URL:
      ```js
      const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
      ```
@@ -151,4 +150,4 @@ You can further secure and brand your deployment by setting up a custom domain f
 
 ## Conclusion
 
-This project demonstrates a genuine full‑stack application built from scratch for an introductory web development course. It combines standard practices with custom UI/UX enhancements and is deployed using Railway (for the backend) and GitHub Pages (for the static frontend). Enjoy exploring and further enhancing this project!
+This project demonstrates a full‑stack application for a web development course. It combines standard practices with custom UI/UX enhancements and is deployed using Railway (for the backend) and GitHub Pages (for the static frontend). Enjoy exploring my project!
