@@ -2,32 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome</title>
+  <title>Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="welcome-page">
+<body class="tasks-page">
   <header>
-    <h1>Welcome Page</h1>
+    <h1>Home Page</h1>
+    <div id="welcomeUser" class="welcome-user"></div>
   </header>
-  <div id="home-container">
-    <!-- Extra welcome text above the name input -->
-    <div class="welcome-text-extra">
-      Hey!<br>
-      Welcome to task-e :)<br>
-      Let's do your tasks together!
-    </div>
-    <div id="name-input-section">
-      <input type="text" id="userName" placeholder="Your name">
-      <button id="submitName">Submit</button>
-      <!-- GIF underneath "Your name" input -->
-      <img id="welcomeGif" src="https://cdn-icons-gif.flaticon.com/15578/15578432.gif" alt="Welcome GIF">
-    </div>
-    <div id="welcome-message" style="display:none;">
-      <h2 id="welcomeText"></h2>
-      <canvas id="confettiCanvas"></canvas>
-    </div>
+  <div id="tasks-container">
+    <!-- Open Add Task in a new tab -->
+    <button id="goToAdd" class="add-task-btn">Add Task</button>
+    <ul id="taskList"></ul>
   </div>
   <footer class="bottom-header"></footer>
   <script src="home.js"></script>
+  <script>
+    // Retrieve and display the user's name in the upper left corner
+    const userName = localStorage.getItem("userName");
+    if (userName) {
+      document.getElementById("welcomeUser").textContent = `Welcome ${userName}!`;
+    }
+  </script>
 </body>
 </html>
