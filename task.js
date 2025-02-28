@@ -9,6 +9,7 @@ const timerDisplay = document.getElementById("timerDisplay");
 const taskContentElem = document.getElementById("taskContent");
 const taskDescriptionElem = document.getElementById("taskDescription");
 
+// Fetch the specific task details from the backend
 async function fetchTask() {
   try {
     const response = await fetch(API_URL);
@@ -28,11 +29,12 @@ async function fetchTask() {
 
 fetchTask();
 
+// Start the timer and show the buffer GIF when the timer starts
 function startTimer() {
   timerButton.textContent = "Done!";
   timerButton.classList.remove("timer-start-btn");
   timerButton.classList.add("done-btn");
-  // Show the buffer element only when timer starts
+  // Show the buffer element only when the timer starts
   document.getElementById("buffer").style.display = "block";
   timerInterval = setInterval(() => {
     secondsElapsed++;
@@ -40,13 +42,15 @@ function startTimer() {
   }, 1000);
 }
 
+// Stop the timer, hide the buffer, and mark the task as complete
 function stopTimer() {
   clearInterval(timerInterval);
-  // Hide the buffer element when timer stops
+  // Hide the buffer element when the timer stops
   document.getElementById("buffer").style.display = "none";
   completeTask();
 }
 
+// Send the completed time to the backend and close the Timer page
 async function completeTask() {
   try {
     const response = await fetch(`${API_URL}/complete`, {
@@ -70,6 +74,7 @@ async function completeTask() {
   }
 }
 
+// Toggle the timer based on the button's text
 timerButton.addEventListener("click", () => {
   if (timerButton.textContent === "Start!") {
     startTimer();
