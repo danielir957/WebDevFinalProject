@@ -4,7 +4,7 @@ const API_URL = "http://localhost:3000/api/tasks";
 document.addEventListener("DOMContentLoaded", () => {
   fetchTasks();
   document.getElementById("goToAdd").addEventListener("click", () => {
-    window.location.href = "add.html";
+    window.open("add.html", "_blank");
   });
 });
 
@@ -17,27 +17,36 @@ async function fetchTasks() {
     const list = document.getElementById("taskList");
     list.innerHTML = "";
     if (tasks.length === 0) {
-      list.innerHTML = "<li>No tasks available.</li>";
+      list.innerHTML = "<li>No Tasks Yet!</li>";
     }
     tasks.forEach(task => {
       const li = document.createElement("li");
       li.classList.add("task-item");
 
-      // Display task content with "- Done! ✓ (time sec)" if completed
-      const contentSpan = document.createElement("span");
+      // Container for task text (title and description)
+      const textContainer = document.createElement("div");
+      textContainer.classList.add("text-container");
+      const titleDiv = document.createElement("div");
+      titleDiv.innerHTML = task.content;
       if (task.completedTime !== null) {
-        contentSpan.textContent = `${task.content} - Done! ✓ (${task.completedTime} sec)`;
-      } else {
-        contentSpan.textContent = task.content;
+        const doneSpan = document.createElement("span");
+        doneSpan.textContent = ` - Done! ✓ (${task.completedTime} sec)`;
+        titleDiv.appendChild(doneSpan);
       }
-      li.appendChild(contentSpan);
+      textContainer.appendChild(titleDiv);
+      if (task.description && task.description !== "") {
+        const descDiv = document.createElement("div");
+        descDiv.classList.add("task-description");
+        descDiv.innerHTML = task.description;
+        textContainer.appendChild(descDiv);
+      }
+      li.appendChild(textContainer);
 
-      // Container for action buttons
+      // Container for action buttons (aligned right)
       const btnContainer = document.createElement("div");
       btnContainer.classList.add("btn-container");
 
-      // Start/Do It Again button:
-      // If incomplete, yellow "Start!"; if completed, green "Do It Again!"
+      // Start/Do It Again button
       const startBtn = document.createElement("button");
       if (task.completedTime === null) {
         startBtn.textContent = "Start!";
@@ -62,7 +71,7 @@ async function fetchTasks() {
       });
       btnContainer.appendChild(deleteBtn);
 
-      // Arrow buttons container (grouped closely)
+      // Arrow buttons container
       const arrowContainer = document.createElement("div");
       arrowContainer.classList.add("arrow-container");
 
