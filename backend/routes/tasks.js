@@ -24,7 +24,7 @@ client.on("error", err => console.error("Redis Client Error", err));
   }
 })();
 
-// Helper: Get tasks from Redis and parse each as JSON
+// Helper function: Get tasks from Redis and parse each as JSON
 async function getTasks() {
   try {
     const tasksData = await client.lRange("tasks", 0, -1);
@@ -44,7 +44,7 @@ async function getTasks() {
   }
 }
 
-// Helper: Save tasks (array of objects) back to Redis
+// Helper function: Save tasks (array of objects) back to Redis
 async function saveTasks(tasks) {
   await client.del("tasks");
   for (const task of tasks) {
@@ -63,16 +63,17 @@ router.get("/", async (req, res) => {
   }
 });
 
-// POST /api/tasks - Add a new task
+// POST /api/tasks - Add a new task (accepts an optional description)
 router.post("/", async (req, res) => {
   try {
-    const { task } = req.body;
+    const { task, description } = req.body;
     if (!task) {
       return res.status(400).json({ error: "Task content is required" });
     }
     const newTask = {
       id: uuidv4(),
       content: task,
+      description: description ? description : "",
       completedTime: null
     };
     await client.rPush("tasks", JSON.stringify(newTask));
