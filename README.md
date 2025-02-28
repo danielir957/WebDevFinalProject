@@ -125,7 +125,7 @@ For the frontend, we use a dedicated branch (**gh-pages**) containing only the s
 ### Running the Frontend Locally
 
 1. Navigate to the `frontend` folder:
-bash
+   ```bash
    cd frontend
    npx http-server .
 
