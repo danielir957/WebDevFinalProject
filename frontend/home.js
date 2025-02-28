@@ -6,12 +6,15 @@ document.getElementById("submitName").addEventListener("click", () => {
       alert("Please enter your name");
       return;
     }
+    // Save the user name to localStorage for later retrieval on the Home page.
+    localStorage.setItem("userName", name);
+    
     document.getElementById("name-input-section").style.display = "none";
     const welcomeText = document.getElementById("welcomeText");
     welcomeText.textContent = `Welcome, ${name}!`;
     document.getElementById("welcome-message").style.display = "block";
     startConfetti();
-    // Redirect after 3 seconds to tasks page
+    // Redirect after 3 seconds to tasks.html (Home Page)
     setTimeout(() => {
       window.location.href = "tasks.html";
     }, 3000);
