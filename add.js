@@ -1,5 +1,5 @@
 console.log("add.js loaded");
-const API_URL = "http://localhost:3000/api/tasks";
+const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
 
 document.getElementById("addTaskButton").addEventListener("click", async () => {
   const taskInput = document.getElementById("newTaskInput");

@@ -1,5 +1,3 @@
-// index.js
-
 document.getElementById("submitName").addEventListener("click", () => {
   const name = document.getElementById("userName").value.trim();
   if (!name) {

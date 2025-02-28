@@ -1,5 +1,5 @@
 console.log("home.js loaded");
-const API_URL = "http://localhost:3000/api/tasks";
+const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchTasks();

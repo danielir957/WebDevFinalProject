@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/tasks";
+const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
 const urlParams = new URLSearchParams(window.location.search);
 const taskId = urlParams.get("id");
 

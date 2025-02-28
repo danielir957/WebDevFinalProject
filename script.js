@@ -1,4 +1,4 @@
-const API_URL = "https://your-backend-url.onrender.com/api/tasks"; // Change this to your deployed backend URL
+const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
 
 // Fetch tasks from the backend and update the list in the DOM
 async function fetchTasks() {
