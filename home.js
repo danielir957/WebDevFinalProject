@@ -17,7 +17,8 @@ async function fetchTasks() {
     const list = document.getElementById("taskList");
     list.innerHTML = "";
     if (tasks.length === 0) {
-      list.innerHTML = "<li style='color: white;'>No Tasks Available.</li>";
+      // Use a CSS class instead of inline style
+      list.innerHTML = "<li class='no-tasks'>No Tasks Available.</li>";
     }
     tasks.forEach(task => {
       const li = document.createElement("li");
