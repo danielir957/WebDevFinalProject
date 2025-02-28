@@ -6,7 +6,7 @@ document.getElementById("submitName").addEventListener("click", () => {
     alert("Please enter your name");
     return;
   }
-  // Save the user name to localStorage for later retrieval on the Home/Tasks page.
+  // Save the user name to localStorage for later retrieval on the Home page.
   localStorage.setItem("userName", name);
 
   // Flush the Redis database via backend before proceeding

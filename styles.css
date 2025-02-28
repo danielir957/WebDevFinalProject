@@ -59,7 +59,7 @@ footer.bottom-header {
   z-index: 1000;
 }
 
-/* Welcome text styling */
+/* Updated welcome text styling */
 .welcome-text-extra {
   font-size: 2.25em;
   color: #333;
@@ -98,14 +98,9 @@ footer.bottom-header {
   margin: 10px auto 0 auto;
 }
 
-/* Ensure welcome message text (e.g., "Welcome, <name>!") is styled consistently */
+/* Force welcome message text to be dark gray */
 #welcomeText {
-  color: #333;  /* dark gray to match other texts on the page */
-}
-
-/* Rule for "No Tasks Available." message */
-.no-tasks {
-  color: white;
+  color: #333;
 }
 
 /* Tasks page container */
@@ -121,14 +116,14 @@ footer.bottom-header {
   padding: 0;
 }
 
-/* Task items with curved corners and swap transition */
+/* Task items with curved corners */
 .task-item {
   background-color: #333; /* same as header/footer */
   color: #fff;
   margin: 10px auto;
   padding: 15px;
   width: 80%;
-  border-radius: 10px;
+  border-radius: 10px; /* curved corners */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -235,7 +230,7 @@ footer.bottom-header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-/* Digital scoreboard style for timer digits */
+/* Timer */
 .digital-scoreboard {
   font-family: 'Orbitron', sans-serif;
   font-size: 10em;
@@ -275,7 +270,7 @@ footer.bottom-header {
   margin-bottom: 10px;
 }
 
-/* Add Task button style (fun red circular "Doom Day" button) */
+/* Add Task button style (fun red circular "doom day" button) */
 .add-task-btn {
   background: linear-gradient(135deg, #ff4d4d, #cc0000);
   color: #fff;
