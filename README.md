@@ -9,18 +9,16 @@ A full‑stack task management web application built for a Web Development final
   - **Frontend:** HTML, CSS, JavaScript (vanilla) with custom animations and responsive design
 - **Multiple Screens:**
   - **Welcome Page:** Greets the user with a personalized welcome message and a custom GIF.
-  - **Home/Tasks Page:** Displays tasks in curved rectangles with smooth swap animations, and circular action buttons (Start, Delete, Move).
+  - **Home/Tasks Page:** Displays tasks in rectangles with swaps, and circular action buttons (Start, Delete, Move).
   - **Add Task Page:** Allows users to add tasks with an optional description. Opens in a new tab and, after submission, closes and refreshes the Home page.
-  - **Timer Page:** Shows task details and a digital scoreboard–style timer with a buffer GIF animation. The timer page forces the task content and description text to be white for readability.
+  - **Timer Page:** Shows task details and a timer with a buffer GIF animation. after submission, closes and refreshes the Home page.
 - **UI/UX Details:**
   - Custom color scheme with space gray backgrounds (adjusted per page), curved rectangles, circular buttons with hover effects, and use of the **Pacifico** font.
-  - Swap animations between task rectangles for a smooth reordering experience.
   
 ## Technologies Used
 
 - **Backend:** Node.js, Express.js, Redis  
-- **Frontend:** HTML, CSS, JavaScript, Google Fonts (Pacifico), CSS transitions & animations  
-- **Deployment:** Railway (hosting for backend and static frontend) integrated with GitHub
+- **Frontend:** HTML, CSS, JavaScript, Google Fonts (Pacifico).
 
 ## Deployment Instructions Using Railway and GitHub
 
@@ -68,3 +66,11 @@ A full‑stack task management web application built for a Web Development final
    cd backend
    npm install
    npm start
+
+### Running the Frontend Locally
+1. Navigate to the `frontend` folder:
+   ```bash
+   cd frontend
+   npx http-server
+
+2. Open the provided URL (e.g., http://localhost:8080/home.html) in your browser to test the static site locally.
