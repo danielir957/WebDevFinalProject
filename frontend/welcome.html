@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="welcome-page">
+  <header>
+    <h1>Welcome Page</h1>
+  </header>
+  <div id="home-container">
+    <!-- Extra welcome text above the name input -->
+    <div class="welcome-text-extra">
+      Hey!<br>
+      Welcome to task-e :)<br>
+      Let's do your tasks together!
+    </div>
+    <div id="name-input-section">
+      <input type="text" id="userName" placeholder="Your name">
+      <button id="submitName">Submit</button>
+      <!-- GIF underneath "Your name" input -->
+      <img id="welcomeGif" src="https://cdn-icons-gif.flaticon.com/15578/15578432.gif" alt="Welcome GIF">
+    </div>
+    <div id="welcome-message" style="display:none;">
+      <h2 id="welcomeText"></h2>
+      <canvas id="confettiCanvas"></canvas>
+    </div>
+  </div>
+  <footer class="bottom-header"></footer>
+  <script src="welcome.js"></script>
+</body>
+</html>

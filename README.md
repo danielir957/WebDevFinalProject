@@ -20,43 +20,26 @@ A full‑stack task management web application built for a Web Development final
 - **Backend:** Node.js, Express.js, Redis  
 - **Frontend:** HTML, CSS, JavaScript, Google Fonts (Pacifico).
 
-## Deployment Instructions Using Railway and GitHub
 
-### Prerequisites
-- A [GitHub](https://github.com) account.
-- A [Railway](https://railway.app/) account.
-- (Optional) Redis credentials (you can use Railway’s Redis plugin or connect to Redis Cloud).
-
-### Steps
+## Deploying the Static Website via GitHub Pages
 
 1. **Push Your Code to GitHub:**
-   - Initialize a Git repository in your project folder if you haven’t already.
-   - Add a proper `.gitignore` to exclude `node_modules` and environment files.
-   - Commit your code and push it to a new GitHub repository.
+   - Initialize a Git repository in your project root if you haven’t already.
+   - Ensure your `.gitignore` excludes `node_modules` and sensitive files.
+   - Commit your code and push it to GitHub (e.g., on the `main` branch).
 
-2. **Deploy the Backend (Express with Redis) on Railway:**
-   - Log in to Railway and create a new project.
-   - Connect your GitHub account and select your repository.
-   - **Set the Root Directory:**  
-     Set the project root to the `backend` folder.
-   - **Configure Build & Start Commands:**  
-     - Build command: `npm install`  
-     - Start command: `npm start`
-   - **Environment Variables:**  
-     Add any necessary environment variables (e.g., `REDIS_HOST`, `REDIS_PORT`, etc.) via Railway’s dashboard.
-   - Deploy the backend and note the provided URL.
+2. **Configure GitHub Pages:**
+   - Go to your repository on GitHub.
+   - Click on the **Settings** tab, then navigate to **Pages**.
+   - Under **Source**, select your branch (e.g., `main`) and set the folder to `/frontend` if available.
+     - If not available, you can either move the contents of the `frontend` folder to the repository root or create a dedicated `gh-pages` branch with only the contents of the `frontend` folder.
+   - Save your settings. GitHub Pages will then provide a URL (e.g., `https://yourusername.github.io/your-repository/`).
 
-3. **Deploy the Frontend (Static Site) on Railway:**
-   - Create a new Static Site project in Railway.
-   - Connect to your GitHub repository and set the root directory to the `frontend` folder.
-   - Since this is a static site, you may not need a build command.  
-     Set the Publish Directory to the folder containing your HTML files.
-   - **Important:** Update API endpoints in your frontend JS files (e.g., in `tasks.js` and `task.js`) to point to the Railway URL of your deployed backend.
-   - Deploy the frontend and note the provided URL.
+3. **Update Frontend API Endpoints (if needed):**
+   - In `home.js` and `task.js`, update the API endpoints to point to your deployed backend URL (e.g., Railway URL).
 
-4. **Testing on Your iPhone:**
-   - Open the deployed frontend URL in your mobile browser.
-   - Test all functionalities (welcome page, adding tasks, reordering, timer functionality, etc.).
+4. **Test Your Deployment:**
+   - Open the GitHub Pages URL in your browser (or on your iPhone) to verify the static site loads and functions correctly.
 
 ## Local Development
 
