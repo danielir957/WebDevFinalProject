@@ -56,4 +56,4 @@ A full‑stack task management web application built for a Web Development final
    cd frontend
    npx http-server
 
-2. Open the provided URL (e.g., http://localhost:8080/home.html) in your browser to test the static site locally.
+2. Open the provided URL (e.g., http://localhost:8080/welcome.html) in your browser to test the static site locally.
