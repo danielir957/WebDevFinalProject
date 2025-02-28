@@ -19,10 +19,10 @@ body.welcome-page {
 }
 body.add-page,
 body.tasks-page {
-  background-color: #444444; /* Add & Tasks pages: dark gray (#444444) */
+  background-color: #444444; /* Add & Tasks pages: dark gray */
 }
 body.timer-page {
-  background-color: #262626; /* Timer page: very dark gray (#262626) */
+  background-color: #262626; /* Timer page: very dark gray */
 }
 
 /* Header styles (for every page) */
@@ -59,7 +59,7 @@ footer.bottom-header {
   z-index: 1000;
 }
 
-/* Welcome text styling */
+/* Updated welcome text styling */
 .welcome-text-extra {
   font-size: 2.25em;
   color: #333;
@@ -98,7 +98,7 @@ footer.bottom-header {
   margin: 10px auto 0 auto;
 }
 
-/* Tasks page container */
+/* Tasks page styles */
 #tasks-container {
   max-width: 600px;
   margin: 20px auto;
@@ -110,8 +110,6 @@ footer.bottom-header {
   list-style: none;
   padding: 0;
 }
-
-/* Task items with curved corners and swap transition */
 .task-item {
   background-color: #333; /* same as header/footer */
   color: #fff;
@@ -125,8 +123,6 @@ footer.bottom-header {
   cursor: pointer;
   transition: transform 0.5s ease, margin 0.5s ease;
 }
-
-/* Container for task text */
 .text-container {
   text-align: left;
 }
@@ -227,7 +223,6 @@ footer.bottom-header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-/* Digital scoreboard style for timer digits */
 .digital-scoreboard {
   font-family: 'Orbitron', sans-serif;
   font-size: 10em;
@@ -248,7 +243,7 @@ footer.bottom-header {
 #buffer {
   width: 100%;
   height: 160px;
-  background-image: url('https://i.gifer.com/embedded/download/E0m6.gif');
+  background-image: url('images/buffer.gif');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
