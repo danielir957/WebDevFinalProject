@@ -1,25 +1,30 @@
 # WebDevFinalProject
 
-A full‑stack task management web application built for a Web Development final project. This project features an Express‑based backend using Redis for persistent storage and a separate static frontend with multiple screens and a custom UI design. The application includes a Welcome page, Home/Tasks page, Add Task page, and a Timer page with digital scoreboard animations and smooth UI transitions.
+A full‑stack task management web application built for a Web Development final project. The project features an Express‑based backend using Redis for persistent storage and a separate static frontend with multiple screens and custom UI animations. The application includes a Welcome page, Home/Tasks page, Add Task page, and Timer page with a digital scoreboard animation and smooth transitions.
 
-## Features
+## Full‑Stack Application
 
-- **Full‑Stack Application:**  
-  - **Backend:** Node.js, Express, Redis  
-  - **Frontend:** HTML, CSS, JavaScript (vanilla) with custom animations and responsive design
-- **Multiple Screens:**
-  - **Welcome Page:** Greets the user with a personalized welcome message and a custom GIF.
-  - **Home/Tasks Page:** Displays tasks in curved rectangles with swaps and circular action buttons (Start, Delete, Move).
-  - **Add Task Page:** Allows users to add tasks with an optional description. This page opens in a new tab and, after submission, closes and refreshes the Home page.
-  - **Timer Page:** Shows task details and a digital scoreboard‑style timer with a buffer GIF animation. After finishing, the Timer page closes and refreshes the Home page.
-- **UI/UX Details:**
-  - Custom color scheme with space‑gray backgrounds (each page’s background adjusted as needed), curved rectangles, circular buttons with hover effects, and the use of the **Pacifico** font.
-  - Swap animations between task rectangles for a smooth reordering experience.
+This project is a complete, integrated web application that covers both the client and server sides:
+- **Backend:** Built with Node.js and Express, it handles all API endpoints and uses Redis to persistently store task data.
+- **Frontend:** A static website built using HTML, CSS, and vanilla JavaScript. It includes multiple screens:
+  - **Welcome Page (index.html):** Greets users with personalized welcome text and an animated GIF.
+  - **Home/Tasks Page (home.html):** Displays tasks in curved rectangles with smooth swap animations and circular action buttons for starting, deleting, and reordering tasks.
+  - **Add Task Page (add.html):** Allows users to add new tasks with an optional description. This page opens in a new tab, and after submission, it automatically closes and refreshes the Home page.
+  - **Timer Page (task.html):** Presents task details with a digital scoreboard–style timer and a buffer GIF animation. Task content and description are forced to white for improved readability.
+- **UI/UX:** Custom color scheme with space‑gray backgrounds, curved UI elements, circular buttons with hover effects, and the use of the **Pacifico** font to create a unique look.
 
 ## Technologies Used
 
-- **Backend:** Node.js, Express.js, Redis, Railway  
-- **Frontend:** HTML, CSS, JavaScript, Google Fonts (Pacifico), GitHub Pages
+- **Backend:**
+  - **Node.js & Express.js:** For building the server and creating RESTful API endpoints.
+  - **Redis:** For in-memory, persistent storage of task data.
+- **Frontend:**
+  - **HTML, CSS, JavaScript:** Core technologies for a responsive and interactive UI.
+  - **Google Fonts (Pacifico):** For custom typography.
+  - **CSS Transitions & Animations:** For swap animations, confetti effects, and a digital scoreboard timer.
+- **Deployment:**
+  - **Railway:** Used to host the backend service (Express and Redis).
+  - **GitHub Pages:** Used to deploy the static frontend.
 
 ## Project Structure
 
@@ -48,69 +53,31 @@ WebDevFinalProject/
 └── node_modules/          # (Ignored by Git)
 ```
 
-## Deployment Instructions
+## Deployment Instructions Using Railway and GitHub Pages
 
-### Deploying the Backend via Railway
-
-1. **Push Your Code to GitHub:**
-   - Initialize a Git repository in your project root.
-   - Ensure your `.gitignore` excludes `node_modules` and sensitive files.
-   - Commit and push your code (including the `backend` folder) to GitHub (e.g., on the `main` branch).
-
-2. **Deploy the Backend on Railway:**
-   - Log in to [Railway](https://railway.app/) and create a new project.
-   - Connect your GitHub account and select your repository.
-   - Set the root directory to your `backend` folder.
+### Backend Deployment (Railway)
+1. **Push Your Code to GitHub:**  
+   Ensure your project (including the `backend` folder) is pushed to a GitHub repository.
+2. **Deploy on Railway:**  
+   - Create a new project in [Railway](https://railway.app/) and connect your GitHub repository.
+   - Set the root directory to the `backend` folder.
    - Configure the build command (`npm install`) and the start command (`npm start`).
-   - Add any necessary environment variables (e.g., `REDIS_HOST`, `REDIS_PORT`, etc.).
-   - Deploy the backend and note the provided URL.
+   - Add necessary environment variables (e.g., `REDIS_HOST`, `REDIS_PORT`).
+   - Deploy your backend and note the public URL provided by Railway.
 
-### Deploying the Frontend via GitHub Pages
-
-For the frontend, we use a dedicated branch (**gh-pages**) containing only the static files.
-
-1. **Create a `gh-pages` Branch:**
-   - Create and checkout a new branch:
-     ```bash
-     git checkout -b gh-pages
-     ```
-   - Move (or copy) all files from your `frontend` folder to the root of the `gh-pages` branch.
-   - The resulting structure should be:
-     ```
-     gh-pages branch root/
-     ├── add.html
-     ├── add.js
-     ├── index.html      # Welcome page (entry point)
-     ├── index.js
-     ├── home.html       # Home/Tasks page
-     ├── home.js
-     ├── task.html       # Timer page
-     ├── task.js
-     ├── styles.css
-     └── images/
-         ├── welcome.gif
-         └── buffer.gif
-     ```
-   - Commit and push your changes to GitHub:
-     ```bash
-     git add .
-     git commit -m "Prepare gh-pages branch for GitHub Pages deployment"
-     git push -u origin gh-pages
-     ```
-
-2. **Configure GitHub Pages:**
-   - In your GitHub repository, navigate to **Settings** > **Pages**.
+### Frontend Deployment (GitHub Pages)
+1. **Create a `gh-pages` Branch:**  
+   - Create a new branch called `gh-pages`.
+   - Move (or copy) the contents of your `frontend` folder into the root of the `gh-pages` branch.
+   - Rename `welcome.html` to `index.html` and `welcome.js` to `index.js` if you want the Welcome page to be the entry point.
+2. **Configure GitHub Pages:**  
+   - In your GitHub repository, go to **Settings** > **Pages**.
    - Under **Source**, select the `gh-pages` branch and set the folder to `/` (root).
-   - Save your settings. GitHub Pages will then provide a URL, for example:  
-     `https://yourusername.github.io/WebDevFinalProject/`
-
-3. **Update API Endpoints:**
-   - In your `add.js`, `home.js`,`task.js` and `index.js` files, update the `API_URL` variable to point to your deployed backend URL (e.g., Railway URL).
-     ```js
-     const API_URL = "https://webdevfinalproject-production.up.railway.app/api/tasks";
-     ```
-4. **Test Your Deployment:**
-   - Open the provided GitHub Pages URL on your desktop or iPhone and verify that all pages load and function correctly.
+   - Save your settings. GitHub Pages will provide a URL (e.g., `https://yourusername.github.io/WebDevFinalProject/`).
+3. **Update API Endpoints:**  
+   Update the API endpoint URLs in your frontend JavaScript files (e.g., `home.js` and `task.js`) to point to your Railway backend URL.
+4. **Test the Deployed Site:**  
+   Open the GitHub Pages URL in your browser or on your iPhone to verify that the static site loads correctly and interacts with the backend.
 
 ## Local Development
 
@@ -122,6 +89,8 @@ For the frontend, we use a dedicated branch (**gh-pages**) containing only the s
    npm install
    npm start
 
+2. Ensure that your local Redis instance is running, or update your environment variables accordingly.
+
 ### Running the Frontend Locally
 
 1. Navigate to the `frontend` folder:
@@ -129,4 +98,4 @@ For the frontend, we use a dedicated branch (**gh-pages**) containing only the s
    cd frontend
    npx http-server .
 
-2. Open the provided URL (e.g., http://localhost:8080/index.html) in your browser to test the static site locally.
+2. Then open http://localhost:8080/index.html in your browser to test the static site.
