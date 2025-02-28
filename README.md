@@ -144,9 +144,9 @@ WebDevFinalProject/
 
 ## Additional Security Notes
 
-**Environment Variables:**
+- **Environment Variables:**
 Sensitive credentials (such as Redis connection details) are stored in a .env file, which is added to .gitignore so that it is not committed to GitHub.
-**Custom Domain:**
+- **Custom Domain:**
 You can further secure and brand your deployment by setting up a custom domain for your Railway backend and/or GitHub Pages site.
 
 ## Conclusion
