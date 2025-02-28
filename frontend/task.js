@@ -7,6 +7,7 @@ let secondsElapsed = 0;
 const timerButton = document.getElementById("timerButton");
 const timerDisplay = document.getElementById("timerDisplay");
 const taskContentElem = document.getElementById("taskContent");
+const taskDescriptionElem = document.getElementById("taskDescription");
 
 async function fetchTask() {
   try {
@@ -15,8 +16,10 @@ async function fetchTask() {
     const task = tasks.find(t => t.id === taskId);
     if (task) {
       taskContentElem.textContent = task.content;
+      taskDescriptionElem.textContent = task.description || "";
     } else {
       taskContentElem.textContent = "Task not found";
+      taskDescriptionElem.textContent = "";
     }
   } catch (error) {
     console.error("Error fetching task:", error);
@@ -27,17 +30,20 @@ fetchTask();
 
 function startTimer() {
   timerButton.textContent = "Done!";
-  // Switch button from yellow to green (done state)
   timerButton.classList.remove("timer-start-btn");
   timerButton.classList.add("done-btn");
+  // Show the buffer element only when timer starts
+  document.getElementById("buffer").style.display = "block";
   timerInterval = setInterval(() => {
     secondsElapsed++;
-    timerDisplay.textContent = `${secondsElapsed} seconds`;
+    timerDisplay.textContent = secondsElapsed.toString().padStart(2, '0') + " seconds";
   }, 1000);
 }
 
 function stopTimer() {
   clearInterval(timerInterval);
+  // Hide the buffer element when timer stops
+  document.getElementById("buffer").style.display = "none";
   completeTask();
 }
 
