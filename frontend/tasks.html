@@ -8,11 +8,22 @@
 <body class="tasks-page">
   <header>
     <h1>Home Page</h1>
+    <div id="welcomeUser" class="welcome-user"></div>
   </header>
   <div id="tasks-container">
+    <!-- Open Add Task in a new tab -->
     <button id="goToAdd" class="add-task-btn">Add Task</button>
     <ul id="taskList"></ul>
   </div>
+  <!-- Bottom-of-the-page header -->
+  <footer class="bottom-header"></footer>
   <script src="tasks.js"></script>
+  <script>
+    // Retrieve and display the user's name in the header (upper left)
+    const userName = localStorage.getItem("userName");
+    if (userName) {
+      document.getElementById("welcomeUser").textContent = `Welcome, ${userName}!`;
+    }
+  </script>
 </body>
 </html>
