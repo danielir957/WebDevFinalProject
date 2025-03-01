@@ -19,10 +19,10 @@ body.welcome-page {
 }
 body.add-page,
 body.tasks-page {
-  background-color: #444444; /* Add & Tasks pages: dark gray */
+  background-color: #444444; /* Dark gray */
 }
 body.timer-page {
-  background-color: #262626; /* Timer page: very dark gray */
+  background-color: #262626; /* Very dark gray */
 }
 
 /* Header styles (for every page) */
@@ -32,6 +32,10 @@ header {
   padding: 15px;
   text-align: center;
   position: relative;
+}
+header h1 {
+  /* Assuming default h1 is around 2em, setting it to 1.5em is 25% smaller */
+  font-size: 1.5em;
 }
 
 /* Bottom-of-the-page footer always at the bottom */
@@ -49,7 +53,7 @@ footer.bottom-header {
 #home-container {
   text-align: center;
   padding: 20px;
-  padding-bottom: 80px; /* avoid footer overlap */
+  padding-bottom: 80px; /* Avoid footer overlap */
 }
 #confettiCanvas {
   position: fixed;
@@ -98,9 +102,10 @@ footer.bottom-header {
   margin: 10px auto 0 auto;
 }
 
-/* Ensure welcome message text (e.g., "Welcome, <name>!") is styled consistently */
-#welcomeText {
-  color: #333;  /* dark gray to match other texts on the page */
+/* Initially hide welcome message and buffer */
+#welcome-message,
+#buffer {
+  display: none;
 }
 
 /* Rule for "No Tasks Available." message */
@@ -123,12 +128,12 @@ footer.bottom-header {
 
 /* Task items with curved corners and swap transition */
 .task-item {
-  background-color: #333; /* same as header/footer */
+  background-color: #333; /* Same as header/footer */
   color: #fff;
   margin: 10px auto;
   padding: 15px;
   width: 80%;
-  border-radius: 10px;
+  border-radius: 10px; /* Curved corners */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -218,7 +223,7 @@ footer.bottom-header {
 
 /* Circular arrow buttons (move buttons) with hover effect */
 .move-btn {
-  background-color: #222; /* darker gray */
+  background-color: #222; /* Darker gray */
   color: #fff;
   border: none;
   width: 50px;
@@ -254,7 +259,7 @@ footer.bottom-header {
 
 /* Buffer element style for timer page: static, centered */
 #buffer {
-  display: none;  /* Buffer hidden by default */
+  display: none; /* Initially hidden */
   width: 100%;
   height: 160px;
   background-image: url('images/buffer.gif');
