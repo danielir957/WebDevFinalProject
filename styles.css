@@ -19,10 +19,10 @@ body.welcome-page {
 }
 body.add-page,
 body.tasks-page {
-  background-color: #444444; /* Add & Tasks pages: dark gray */
+  background-color: #444444; /* Dark gray */
 }
 body.timer-page {
-  background-color: #262626; /* Timer page: very dark gray */
+  background-color: #262626; /* Very dark gray */
 }
 
 /* Header styles (for every page) */
@@ -88,7 +88,7 @@ footer.bottom-header {
 }
 #name-input-section button:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Welcome GIF styling */
@@ -98,9 +98,15 @@ footer.bottom-header {
   margin: 10px auto 0 auto;
 }
 
-/* Ensure welcome message text (e.g., "Welcome, <name>!") is styled consistently */
+/* Welcome message text styling */
 #welcomeText {
-  color: #333;  /* dark gray to match other texts on the page */
+  color: #333; /* dark gray */
+}
+
+/* Initially hide welcome message and buffer */
+#welcome-message,
+#buffer {
+  display: none;
 }
 
 /* Rule for "No Tasks Available." message */
@@ -128,7 +134,7 @@ footer.bottom-header {
   margin: 10px auto;
   padding: 15px;
   width: 80%;
-  border-radius: 10px;
+  border-radius: 10px; /* curved corners */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -160,7 +166,8 @@ footer.bottom-header {
 }
 
 /* Circular home/timer start button (yellow) */
-.home-start-btn, .timer-start-btn {
+.home-start-btn,
+.timer-start-btn {
   background: linear-gradient(135deg, #ffff66, #ffcc00);
   color: #000;
   border: 3px solid #b3a100;
@@ -169,17 +176,19 @@ footer.bottom-header {
   border-radius: 50%;
   font-size: 1em;
   font-weight: bold;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.home-start-btn:hover, .timer-start-btn:hover {
+.home-start-btn:hover,
+.timer-start-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Circular done/repeat button (darker green) */
-.done-btn, .repeat-btn {
+.done-btn,
+.repeat-btn {
   background: linear-gradient(135deg, #388e3c, #2e7d32);
   color: #fff;
   border: 3px solid #1b5e20;
@@ -188,13 +197,14 @@ footer.bottom-header {
   border-radius: 50%;
   font-size: 1em;
   font-weight: bold;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.done-btn:hover, .repeat-btn:hover {
+.done-btn:hover,
+.repeat-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Circular delete button (darker red) with hover effect */
@@ -213,7 +223,7 @@ footer.bottom-header {
 }
 .delete-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Circular arrow buttons (move buttons) with hover effect */
@@ -232,7 +242,7 @@ footer.bottom-header {
 }
 .move-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Digital scoreboard style for timer digits */
@@ -254,7 +264,7 @@ footer.bottom-header {
 
 /* Buffer element style for timer page: static, centered */
 #buffer {
-  display: none;  /* Buffer hidden by default */
+  display: none; /* Hidden by default */
   width: 100%;
   height: 160px;
   background-image: url('images/buffer.gif');
@@ -286,13 +296,13 @@ footer.bottom-header {
   border-radius: 50%;
   font-size: 2em;
   font-weight: bold;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .add-task-btn:hover {
   transform: scale(1.15);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Task detail (Timer) page styles */
